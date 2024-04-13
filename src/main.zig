@@ -187,8 +187,8 @@ fn update(state: *GameState) void {
             state.ball.position = rl.Vector2.init(SCREENWIDTH / 2, SCREENHEIGHT / 2);
             state.ball.velocity = rl.Vector2.init(-BALL_VELOCITY, 0.0);
             state.scores = .{ state.scores[0] + 1, state.scores[1] };
-            state.paddle1.position = rl.Vector2.init(10, SCREENHEIGHT / 2);
-            state.paddle2.position = rl.Vector2.init(SCREENWIDTH - 10, SCREENHEIGHT / 2);
+            state.paddle1.position = PADDLE_1_DEFAULT_POSITION;
+            state.paddle2.position = PADDLE_2_DEFAULT_POSITION;
         }
         if (rl.checkCollisionPointLine(
             state.ball.position,
@@ -199,8 +199,8 @@ fn update(state: *GameState) void {
             state.ball.position = rl.Vector2.init(SCREENWIDTH / 2, SCREENHEIGHT / 2);
             state.ball.velocity = rl.Vector2.init(BALL_VELOCITY, 0.0);
             state.scores = .{ state.scores[0], state.scores[1] + 1 };
-            state.paddle1.position = rl.Vector2.init(10, SCREENHEIGHT / 2);
-            state.paddle2.position = rl.Vector2.init(SCREENWIDTH - 10, SCREENHEIGHT / 2);
+            state.paddle1.position = PADDLE_1_DEFAULT_POSITION;
+            state.paddle2.position = PADDLE_2_DEFAULT_POSITION;
         }
     }
 
